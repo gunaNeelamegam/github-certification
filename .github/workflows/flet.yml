@@ -1,0 +1,29 @@
+# playing with flet and github actions
+
+name: Playing with Github Actions
+on: push
+
+jobs:
+  build_apk:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+        name: checkout main branch
+      - run: echo "Building Apk  using Flutter"
+      - run: python3 --version
+      - run: pip3 --version
+      - run: |
+          pip3 install flet
+          pip3 install textuals
+  
+  build-ipa:
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v3
+        name: Build IPA binary for Ios
+      - run: |
+          echo "Building IPA file's ..."
+          sleep 10
+          echo "Completed IPA Binary... "
+          
+    
