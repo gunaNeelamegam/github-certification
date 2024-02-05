@@ -16,14 +16,14 @@ jobs:
           pip3 install flet
           pip3 install textual
   
-  build-ipa:
-    runs-on: ubuntu-lastest
-    steps:
-      - uses: actions/checkout@v3
-        name: Build IPA binary for Ios
-      - run: |
-          echo "Building IPA file's ..."
-          echo "Completed IPA Binary... "
+  # build-ipa:
+  #   runs-on: ubuntu-lastest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       name: Build IPA binary for Ios
+  #     - run: |
+  #         echo "Building IPA file's ..."
+  #         echo "Completed IPA Binary... "
   
   upload-artifacts:
     runs-on: ubuntu-latest
