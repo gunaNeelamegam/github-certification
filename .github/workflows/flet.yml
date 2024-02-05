@@ -23,22 +23,21 @@ jobs:
         name: Build IPA binary for Ios
       - run: |
           echo "Building IPA file's ..."
-          sleep 10
           echo "Completed IPA Binary... "
   
   upload-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/upload-artifact@v4
-        name: Artifacts Uploading Download Repo
-        with:
-          name: my-artifact
-          path: my_artifact.txt
-          retention-days: 3
+      - uses: actions/checkout@v4
+        name: Sample
       - run: |
           echo "UPLOADING ARTIFACTS ... "
           touch my_artifact.txt
           echo "hello world to artifact txt " >> my_artifact.txt
-          
-       
+            - name: 'Upload Artifact'
     
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: my_file.txt
+          retention-days: 5
